@@ -1,0 +1,59 @@
+name: czynne-website
+description: Description of czynne-website
+version: 0.0.1
+
+classes:
+  text:
+    - name: name
+      type: string
+    - name: content
+      type: text
+  propertytype:
+    - name: name
+      type: string
+    - name: icon
+      type: file
+  region:
+    - name: min_lat
+      type: float
+    - name: min_lng
+      type: float
+    - name: max_lat
+      type: float
+    - name: max_lng
+      type: float
+  services:
+    - name: title
+      type: string
+      filter_index: true
+    - name: region
+      type: reference
+      target: region
+    - name: www
+      type: string
+    - name: email
+      type: string
+    - name: tel
+      type: string
+    - name: status
+      type: string
+      filter_index: true
+    - name: property_types
+      type: string
+      filter_index: true
+    - name: location_search
+      type: string
+      filter_index: true
+    - name: geo_location
+      type: geopoint
+    - name: post_tag
+      type: array
+      filter_index: true
+    - name: locations
+      type: array
+      filter_index: true
+    - name: slider_image
+      type: file
+    - name: property_relations
+      type: relation
+      target: propertytype

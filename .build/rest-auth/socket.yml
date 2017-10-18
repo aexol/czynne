@@ -1,0 +1,114 @@
+name: rest-auth
+description: Basic rest user auth/register Socket
+version: 0.0.11
+keywords:
+  - user
+  - register
+  - auth
+  - authentication
+  - rest
+  - aexol
+endpoints:
+  login:
+    file: login.js
+    parameters:
+      username:
+        type: string
+        description: Username
+        example: joe
+      password:
+        type: string
+        description: User password
+        example: super-sercret-password
+    response:
+      mimetype: application/json
+      examples:
+        - exit_code: 200
+          description: Success
+          example: |
+            {
+              token: "cb21ff98ac8c7dda8fcd0129b0adb0254dea5c8e",
+              username: "u"
+            }
+        - exit_code: 400
+          description: Failed
+          example: |
+            {}
+  register:
+    file: register.js
+    parameters:
+      username:
+        type: string
+        description: User name
+        example: joe
+      password:
+        type: string
+        description: User password
+        example: super-sercret-password
+    response:
+      mimetype: application/json
+      examples:
+        - exit_code: 200
+          description: Success
+          example: |
+            {
+              token: "cb21ff98ac8c7dda8fcd0129b0adb0254dea5c8e",
+              username: "u"
+            }
+        - exit_code: 400
+          description: Failed
+          example: |
+            {}
+  validate:
+    file: validate.js
+    parameters:
+      username:
+        type: string
+        description: username
+        example: john
+      token:
+        type: string
+        description: User token
+        example: cb21ff98ac8c7dda8fcd0129b0adb0254dea5c8e
+    response:
+      mimetype: application/json
+      examples:
+        - exit_code: 200
+          description: Success
+          example: |
+            {
+              valid: true
+            }
+        - exit_code: 400
+          description: Failed
+          example: |
+            {
+              valid: false
+            }
+  refresh:
+    file: refresh.js
+    parameters:
+      username:
+        type: string
+        description: username
+        example: john
+      token:
+        type: string
+        description: User token
+        example: cb21ff98ac8c7dda8fcd0129b0adb0254dea5c8e
+    response:
+      mimetype: application/json
+      examples:
+        - exit_code: 200
+          description: Success
+          example: |
+            {
+              token: "cb21ff98ac8c7dda8fcd0129b0adb0254dea5c8e",
+              username: "john"
+            }
+        - exit_code: 400
+          description: Failed
+          example: |
+            {
+              valid: false
+            }

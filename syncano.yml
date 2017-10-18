@@ -1,0 +1,8 @@
+dependencies:
+  sockets:
+    migrate:
+      version: 0.0.11
+    rest-framework:
+      version: 0.0.28
+    rest-auth:
+      version: 0.0.11
